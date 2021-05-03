@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+  </head>
+  <body>
+    <h1>Bienvenue !</h1>
+    <p> Voici le <a href="/gossips/new/">lien</a> qui te permets de créer un gossip ! </p>
+    
+    <!-- Ici débute le code Ruby pour faire appel à des variables ruby-->
+    
+    <% gossips.each_with_index do |gossip, id| %>
+        <p>
+          <%= gossip.author %><br/>
+          <%= gossip.content %>
+        </p>
+        <a href= "/gossips/<%= id%>">Aller sur la page de ce potin</a>
+        <hr>
+      <% end %>
+
+    <a href="/gossips/new/">Go créer des nouveaux potins !</a>
+    <!--Fin de la partie ruby dans le HTML -->
+  </body>
+</html>
